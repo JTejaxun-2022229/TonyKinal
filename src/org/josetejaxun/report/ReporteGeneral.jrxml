@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteGeneral" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c46e50a-749f-4452-b151-a48301e6d1be">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="860"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select
+			Empr.nombreEmpresa as 'Nombre Empresa',
+            Pre.fechaSolicitud as 'Fecha Solicitud',
+            Pre.cantidadPresupuesto as 'Cantidad Presupuesto',
+            Ser.tipoServicio as 'Tipo Servicio',
+            ser.telefonoContacto as 'Telefono Contacto',
+            Empl.apellidoEmpleado as 'Apellido Empleado',
+            Empl.nombreEmpleado as 'Nombre Empleado',
+            Templ.descripcion as 'Tipo Empleado',
+            Pla.nombrePlato as 'Nombre Plato',
+            Pla.descripcionPlato as 'Descripcion Plato',
+            Tpla.descripcionTipo as 'Tipo Plato',
+            Pro.nombreProducto as 'Contenido'
+            from Empresas as Empr
+			inner join Presupuestos as Pre On Empr.codigoEmpresa = Pre.codigoEmpresa
+			inner join Servicios as Ser on Empr.codigoEmpresa = Ser.codigoEmpresa
+			inner join Servicios_has_Empleados as She on Ser.codigoServicio = She.codigoServicio
+		    inner join Empleados as Empl on She.codigoEmpleado = Empl.codigoEmpleado
+			inner join TipoEmpleado  as Templ on Empl.codigoTipoEmpleado = Templ.codigoTipoEmpleado
+            inner join Servicios_has_Platos as Shp on Ser.codigoServicio = Shp.codigoServicio
+            inner join Platos as Pla on Shp.codigoPlato = Pla.codigoPlato
+            inner join TipoPlato as Tpla on Pla.codigoTipoPlato = Tpla.codigoTipoPlato
+            inner join Productos_has_Platos as Php on Pla.codigoPlato = Php.codigoPlato
+            inner join Productos as Pro on Php.codigoProducto = Pro.codigoProducto
+			where Empr.codigoEmpresa = $P{codEmpresa}
+            group by Empr.codigoEmpresa;]]>
+	</queryString>
+	<field name="Nombre Empresa" class="java.lang.String"/>
+	<field name="Fecha Solicitud" class="java.sql.Date"/>
+	<field name="Cantidad Presupuesto" class="java.math.BigDecimal"/>
+	<field name="Tipo Servicio" class="java.lang.String"/>
+	<field name="Telefono Contacto" class="java.lang.String"/>
+	<field name="Apellido Empleado" class="java.lang.String"/>
+	<field name="Nombre Empleado" class="java.lang.String"/>
+	<field name="Tipo Empleado" class="java.lang.String"/>
+	<field name="Nombre Plato" class="java.lang.String"/>
+	<field name="Descripcion Plato" class="java.lang.String"/>
+	<field name="Tipo Plato" class="java.lang.String"/>
+	<field name="Contenido" class="java.lang.String"/>
+	<background>
+		<band height="752" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="752" forecolor="#FFFAF2" backcolor="#FFFAF2" uuid="aa9a23cc-60f3-4c43-ac39-db5f0f257ecd"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="10" y="10" width="100" height="49" backcolor="#FFFAF2" uuid="fc2c1741-4386-4029-83e7-2c6443adddb4"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="71" y="16" width="15" height="20" forecolor="#FFED7C" backcolor="#FFED7C" uuid="8c6c57cb-8775-4b8c-86db-26407fc1071c"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="62" y="25" width="15" height="20" forecolor="#F6A2BF" backcolor="#F6A2BF" uuid="1c6225c2-6537-4792-aecc-adb9d8443c9e"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="34" y="18" width="15" height="20" forecolor="#08B5FF" backcolor="#08B5FF" uuid="66aca773-f49e-4cf0-9c98-5139c640f7b4"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="80" y="25" width="15" height="20" forecolor="#BBE78A" backcolor="#BBE78A" uuid="aafe3611-e452-4b08-833d-adda083adc57"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="22" y="25" width="15" height="20" forecolor="#B492FA" backcolor="#B492FA" uuid="1fede967-567b-4fa3-8f17-1bd039fe2d60"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="47" y="25" width="15" height="20" forecolor="#FF9908" backcolor="#FF9908" uuid="22aef2c6-016b-4181-89a2-9f5d94959071"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="22" y="40" width="100" height="20" uuid="86a5a8f6-6e62-490d-b8d9-47ad431ee87f"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tonny's Event's]]></text>
+			</staticText>
+		</band>
+	</background>
+	<title>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="158" y="10" width="260" height="40" uuid="3f402c0c-6c2b-44bb-9b7c-3a5953363db4"/>
+				<textElement>
+					<font fontName="Century Gothic" size="30" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Reporte General]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="466" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="13" width="148" height="20" uuid="4e91819a-93aa-4889-8e21-74ffe832e804"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre de la Empresa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="84" width="164" height="20" uuid="21449c81-eed6-4069-8597-8d733260b2f1"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad de Presupuestos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="47" width="122" height="20" uuid="d5ab22fe-c3f5-4a65-a20f-9c8892e211bd"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Solicitud]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="122" width="122" height="20" uuid="6c0b5232-753d-427b-b057-f6e1b7bfcda7"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Servicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="158" width="122" height="20" uuid="0708efea-9472-4c67-9b13-b585de43a860"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono Contacto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="195" width="148" height="20" uuid="bd237828-50fb-4ffc-8670-f750118d041e"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido del Empleado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="277" width="122" height="20" uuid="e43bb597-c0b4-409b-80e9-d24880393537"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Empleado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="317" width="122" height="20" uuid="6bb4be9a-87f8-48bc-ac67-6e19cc67c059"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Plato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="357" width="122" height="20" uuid="2e79603b-7c8d-4236-b12b-ff449c381307"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion del Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="394" width="122" height="20" uuid="9489a48a-2e90-4a16-b3a8-2d6183981e09"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Plato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="427" width="122" height="20" uuid="503e8b50-f6b7-4c3d-990a-3e1c17bb4cac"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contenido del Plato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="236" width="136" height="20" uuid="2822898c-b177-4939-934f-255a9be511a0"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Empleado:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="10" width="100" height="20" uuid="db110d26-f458-4475-bb29-13460449a906"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre Empresa}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="223" y="47" width="100" height="20" uuid="98601b60-51ce-4f2d-a04d-986ab3c3ef7a"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha Solicitud}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="223" y="84" width="100" height="20" uuid="a26b925d-a5d7-4370-b17e-dae02f4677a8"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cantidad Presupuesto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="122" width="100" height="20" uuid="fe070d7c-1360-4d4c-b424-fbec252025a2"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tipo Servicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="158" width="100" height="20" uuid="1dd61b87-bd9e-461a-8f52-9508f51cb237"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefono Contacto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="195" width="100" height="20" uuid="29e2edde-cae3-48ea-b3cd-51400a5d7a09"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellido Empleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="236" width="100" height="20" uuid="e07c20d5-b546-40c3-90ae-da8118d30a3a"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre Empleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="277" width="100" height="20" uuid="bba1b330-22b2-4c09-b9f9-4b17ac8ea194"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tipo Empleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="357" width="100" height="20" uuid="26ac618b-a444-45be-89a4-5d03c59794bb"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Descripcion Plato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="394" width="100" height="20" uuid="abfa404e-5d77-4d3e-a088-ecfd0fbcfc73"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tipo Plato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="317" width="100" height="20" uuid="3d924c7d-30fa-4014-a5b0-cc312fe892ca"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre Plato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="427" width="100" height="20" uuid="d3d25c55-fd02-42e6-bf7c-4dc641f0fbed"/>
+				<textElement>
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Contenido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="234" y="4" width="338" height="20" uuid="79ac0b35-a0eb-4bee-8c01-1391f88d328c"/>
+				<textElement>
+					<font fontName="Century Gothic" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Por Cualquier duda comuciarse al: 1209-7892]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

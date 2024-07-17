@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1498.0" style="-fx-background-color: #FFFAF2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josetejaxun.controller.EmpleadoController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="1499.0" style="-fx-background-color: #FF9908;">
+         <children>
+            <AnchorPane layoutX="47.0" layoutY="28.0" prefHeight="142.0" prefWidth="1218.0" style="-fx-background-color: #08B5FF; -fx-background-radius: 35 35 35 35;" />
+            <ImageView fx:id="imgEmpleado" fitHeight="170.0" fitWidth="260.0" layoutX="1302.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Empleado.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="618.0" fitWidth="784.0" layoutX="103.0" layoutY="-82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Banderines.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="618.0" fitWidth="784.0" layoutX="826.0" layoutY="-81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Banderines.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="250.0" fitWidth="300.0" layoutX="-44.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/GloboFondo5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="250.0" fitWidth="300.0" layoutX="13.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/GloboFondo2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="250.0" fitWidth="300.0" layoutX="1071.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/GloboFondo3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="250.0" fitWidth="300.0" layoutX="120.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/GloboFondo6.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="250.0" fitWidth="300.0" layoutX="1182.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/GloboFondo4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="250.0" fitWidth="300.0" layoutX="1282.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/GloboFondo1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="138.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true" />
+      <GridPane layoutX="74.0" layoutY="54.0" prefHeight="90.0" prefWidth="1166.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#ventanaMenuPrincipal" prefHeight="100.0" prefWidth="180.0" styleClass="button1" stylesheets="@../resource/TonnysKinal.css" text="Regresar" textFill="#fffaf2">
+                     <graphic>
+                        <ImageView fx:id="imgRegresar" fitHeight="59.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/IconoRegresar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                  </Button>
+               </children></VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevo" prefHeight="100.0" prefWidth="180.0" styleClass="button1" stylesheets="@../resource/TonnysKinal.css" text="Nuevo" textFill="#fffaf2">
+                     <graphic>
+                        <ImageView fx:id="imgAgregar" fitHeight="57.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/IconoAgregar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                  </Button>
+               </children></VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+               <children>
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="100.0" prefWidth="180.0" styleClass="button1" stylesheets="@../resource/TonnysKinal.css" text="Eliminar" textFill="#fffaf2">
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="55.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/IconoEliminar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                  </Button>
+               </children></VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+               <children>
+                  <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editar" prefHeight="100.0" prefWidth="180.0" styleClass="button1" stylesheets="@../resource/TonnysKinal.css" text="Editar" textFill="#fffaf2">
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="68.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/IconoEditar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                  </Button>
+               </children></VBox>
+            <VBox alignment="CENTER" prefHeight="90.0" prefWidth="212.0" GridPane.columnIndex="4">
+               <children>
+                  <Button fx:id="btnReporte" mnemonicParsing="false" onAction="#reporte" prefHeight="100.0" prefWidth="180.0" styleClass="button1" stylesheets="@../resource/TonnysKinal.css" text="Reporte" textFill="#fffaf2">
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="51.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/IconoReporte.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                  </Button>
+               </children></VBox>
+         </children>
+      </GridPane>
+      <TableView fx:id="tblEmpleados" layoutX="17.0" layoutY="357.0" onKeyPressed="#seleccionarElemento" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="327.0" prefWidth="1462.0">
+         <columns>
+            <TableColumn fx:id="colCodigoEmpleado" prefWidth="109.77779388427734" text="Código empleado" />
+            <TableColumn fx:id="colNumeroEmpleado" prefWidth="129.3333740234375" text="Número empleado" />
+            <TableColumn fx:id="colApellidoEmpleado" prefWidth="168.888916015625" text="Apellido empleado" />
+            <TableColumn fx:id="colNombreEmpleado" prefWidth="201.77774047851562" text="Nombre empleado" />
+            <TableColumn fx:id="colDireccionEmpleado" prefWidth="249.33331298828125" text="Dirección empleado" />
+            <TableColumn fx:id="colTelefonoContactoEmpleado" prefWidth="212.22216796875" text="Teléfono contacto" />
+            <TableColumn fx:id="colGradoCocinero" prefWidth="208.0" text="Grado cocinero" />
+            <TableColumn fx:id="colCodigoTipoEmpleadoEmpleado" prefWidth="178.66668701171875" text="Código tipo de empleado" />
+         </columns>
+      </TableView>
+      <GridPane layoutY="209.0" prefHeight="136.0" prefWidth="1481.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Código empleado:">
+               <font>
+                  <Font name="Century Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Número empleado:" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Century Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Apellido empleado:" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Century Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Nombre empleado:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Dirección empleado:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Century Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Teléfono contacto:" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Grado cocinero:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Código tipo empleado:" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Century Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCodigoEmpleado" editable="false" GridPane.columnIndex="1" />
+            <TextField fx:id="txtNombreEmpleado" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNumeroEmpleado" editable="false" GridPane.columnIndex="3" />
+            <TextField fx:id="txtDireccionEmpleado" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="txtGradoCocinero" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txtApellidoEmpleado" editable="false" GridPane.columnIndex="5" />
+            <TextField fx:id="txtTelefonoContactoEmpleado" editable="false" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbCodigoTipoEmpleado" disable="true" prefHeight="25.0" prefWidth="204.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="1231.0" layoutY="307.0" onMouseClicked="#ventanaTipoEmpleado" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/IconoInformacion.png" />
+         </image>
+      </ImageView>
+      <MenuButton layoutX="1317.0" layoutY="174.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="135.0" styleClass="menu-item" stylesheets="@../resource/TonnysKinal.css" text="+">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#ventanaServicioHasEmpleado" text="Servicios has Empleado" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>

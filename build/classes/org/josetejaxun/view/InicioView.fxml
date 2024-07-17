@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: fffaf2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josetejaxun.controller.InicioController">
+   <children>
+      <ImageView fitHeight="344.0" fitWidth="421.0" layoutX="732.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/SillaD.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="587.0" fitWidth="942.0" layoutX="10.0" layoutY="-272.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Banderines.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="587.0" fitWidth="942.0" layoutX="602.0" layoutY="-275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Banderines.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1100.0" layoutY="-27.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/IconoCerrar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="344.0" fitWidth="421.0" layoutX="132.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/SillaI.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="543.0" fitWidth="668.0" layoutX="331.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Mesa.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="401.0" fitWidth="724.0" layoutX="402.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/LogoPrincipal.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="464.0" fitWidth="604.0" layoutX="-58.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Globos.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="186.0" fitWidth="198.0" layoutX="10.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Bocina.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="464.0" fitWidth="604.0" layoutX="946.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Globos.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="186.0" fitWidth="198.0" layoutX="1014.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Bocina.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="208.0" layoutY="335.0" mnemonicParsing="false" onAction="#ventanaLogin" prefHeight="92.0" prefWidth="150.0" styleClass="button4" stylesheets="@../resource/TonnysKinal.css" text="Inicias Sesión" textFill="#fffaf2">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="854.0" layoutY="335.0" mnemonicParsing="false" onAction="#ventanaRegistro" prefHeight="92.0" prefWidth="150.0" styleClass="button5" stylesheets="@../resource/TonnysKinal.css" text="Registrarse" textFill="#fffaf2">
+         <font>
+            <Font name="Century Gothic Bold" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
